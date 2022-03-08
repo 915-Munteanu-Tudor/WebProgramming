@@ -1,0 +1,37 @@
+#div1 {
+    pointer-events: none;
+    background-color: aquamarine;
+}
+
+#div2 {
+    background-color: blueviolet;
+}
+
+#div3 {
+    background-color: coral;
+}
+
+#div4 {
+    background-color: darkgoldenrod;
+}
+
+#div4{
+    pointer-events:auto;
+    background-color:chartreuse;
+}
+
+#div1:hover {
+    background-color:lightblue;
+}
+
+#div2:hover {
+    background-color:yellow;
+}
+
+#div3:hover {
+    background-color:crimson;
+}
+
+#div4:hover {
+    background-color:darkmagenta;
+}
