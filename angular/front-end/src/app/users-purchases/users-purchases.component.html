@@ -1,0 +1,20 @@
+<p>Your basket</p>
+<table class="users">
+
+
+  <tr *ngFor="let res of purchases" (click)="onSelect(res)">
+    <td>{{res.Name}}</td>
+    <td>{{res.Category}}</td>
+    <td>{{res.Price}}</td>
+    <td>{{res.quantity}}</td>
+
+  </tr>
+</table>
+<button (click)="delete()" [disabled]="!delete_enabled ? 'disabled': null">Delete</button>
+<form #updateForm = "ngForm" (ngSubmit) = "update(updateForm.value.quantity)" >
+  <label for="quantity">Quantity:</label>
+  <input ngModel type="text" id="quantity" name="quantity"><br><br>
+  <input type="submit" value="Update" [disabled]="!update_enabled ? 'disabled': null">
+</form>
+<button (click)="getProducts()">Show basket</button>
+

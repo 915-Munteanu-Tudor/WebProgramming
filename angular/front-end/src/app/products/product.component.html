@@ -1,0 +1,26 @@
+<p>All products</p>
+<table class="users">
+
+
+  <tr *ngFor="let r of products_to_display" (click)="onSelect(r)">
+    <td>{{r.Category}}</td>
+    <td>{{r.Name}}</td>
+    <td>{{r.Price}}</td>
+  </tr>
+</table>
+<button (click)="onPrevious()" [disabled]="!(page > 0) ? 'disabled': null">Previous</button>
+<button (click)="onNext()" [disabled]="!(page < 2) ? 'disabled': null">Next</button>
+<form #filterform = "ngForm" (ngSubmit) = "filter(filterform.value.category, filterform.value.price)">
+  <label for="category">Category:</label>
+  <input ngModel type="text" id="category" name="category"><br><br>
+  <label for="price">Price:</label>
+  <input ngModel type="text" id="price" name="price"><br><br>
+  <input type="submit" value="Submit">
+</form>
+<button (click)="getProducts()">Show all products</button>
+<form #addForm = "ngForm" (ngSubmit) = "add(addForm.value.quantity)" >
+  <label for="quantity">Quantity:</label>
+  <input ngModel type="text" id="quantity" name="quantity"><br><br>
+  <input type="submit" value="Add a product to your basket" [disabled]="!add_enabled ? 'disabled': null">
+</form>
+

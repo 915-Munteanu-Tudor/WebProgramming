@@ -1,0 +1,23 @@
+p {
+  font-weight: bold;
+}
+
+.users tr:nth-child(even){
+  background-color:peachpuff;
+}
+
+.users td {
+  min-width: 60px;
+  padding-left: 5px;
+}
+
+.users tr:hover {
+  color: darkorchid;
+  background-color: pink;
+  position: relative;
+}
+
+.users tr.selected {
+  background-color: mistyrose;
+  color: white;
+}
